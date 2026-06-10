@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard | Stackly Foods</title>
+    <meta name="description" content="Manage your premium gourmet bookings, orders, and taste preferences.">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specific Dashboard overrides to look premium and aligned */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .dashboard-card {
+            background: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-card);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--color-border-light);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .card-header h3 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-header h3 i {
+            color: var(--color-primary);
+        }
+        .dashboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        .dashboard-table th, .dashboard-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--color-border-light);
+        }
+        .dashboard-table th {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+        .dashboard-table td {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+        .badge {
+            padding: 4px 12px;
+            border-radius: var(--radius-xl);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge-success { background: rgba(16, 185, 129, 0.15); color: var(--color-accent); }
+        .badge-warning { background: rgba(255, 159, 28, 0.15); color: #FF9F1C; }
+        .badge-info { background: rgba(212, 175, 55, 0.15); color: var(--color-primary); }
+        .profile-banner {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: linear-gradient(135deg, var(--color-bg-light), var(--color-bg-lighter));
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin-top: 50px;
+        }
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-full);
+            background: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--color-text-dark);
+            border: 3px solid var(--color-primary);
+        }
+        .profile-info h2 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        .membership-badge {
+            display: inline-block;
+            background: linear-gradient(95deg, var(--color-primary), var(--color-secondary));
+            color: var(--color-text-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: var(--radius-xl);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+        .dashboard-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar scrolled" id="mainNavbar">
+            <a href="index.html" class="logo" id="logoLink">
+                <div class="logo-icon">
+                    <i class="fas fa-bowl-food"></i>
+                </div>
+                <div class="logo-text">
+                    <h2>STACKLY</h2>
+                    <span>FOODS</span>
+                </div>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" id="navHome">Home</a></li>
+                <li><a href="about.html" id="navAbout">About Us</a></li>
+                <li><a href="services.html" id="navServices">Services</a></li>
+                <li><a href="blog.html" id="navBlog">Blog</a></li>
+                <li><a href="contact.html" id="navContact">Contact</a></li>
+                <li><a href="#" class="active" id="navDashboard">Dashboard</a></li>
+                <li><a href="index.html" class="btn-nav" id="navLogout">Log Out</a></li>
+            </ul>
+
+            <div class="menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 120px; padding-bottom: 80px;">
+        
+        <!-- SECTION 1: PROFILE BANNER -->
+        <section class="profile-banner animate-on-scroll" id="customer-profile">
+            <div class="profile-avatar">
+                <i class="fas fa-user-astronaut"></i>
+            </div>
+            <div class="profile-info">
+                <h2>Welcome Back, <span class="highlight">Jane Doe</span></h2>
+                <p>Your gourmet membership details are up-to-date. Thank you for dining with Stackly Foods!</p>
+                <div class="membership-badge">Gold Tier Member</div>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: var(--color-text-muted);">Points balance: <strong>1,450 pts</strong> (Use 500 points to claim a free pastry)</p>
+            </div>
+        </section>
+
+        <div class="dashboard-grid">
+            
+            <!-- SECTION 2: RESERVATION TRACKER -->
+            <section class="dashboard-card animate-on-scroll" id="upcoming-reservations">
+                <div class="card-header">
+                    <h3><i class="fas fa-calendar-check"></i> Upcoming Dining Reservations</h3>
+                    <a href="contact.html" class="primary-btn" style="padding: 8px 20px; font-size: 0.85rem;" id="newBookingBtn">Book A Table</a>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th>Booking Ref</th>
+                                <th>Date & Time</th>
+                                <th>Guests</th>
+                                <th>Occasion</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>#SF-9082</strong></td>
+                                <td>June 18, 2026 - 7:30 PM</td>
+                                <td>4 Persons</td>
+                                <td>Anniversary</td>
+                                <td><span class="badge badge-success">Confirmed</span></td>
+                                <td>
+                                    <button class="secondary-btn" style="padding: 6px 12px; font-size: 0.8rem; border-radius: var(--radius-sm);" onclick="alert('Modify Request sent to Sommelier!')">Modify</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>#SF-9114</strong></td>
+                                <td>July 04, 2026 - 1:00 PM</td>
+                                <td>2 Persons</td>
+                                <td>Business Lunch</td>
+                                <td><span class="badge badge-warning">Pending Review</span></td>
+                                <td>
+                                    <button class="secondary-btn" style="padding: 6px 12px; font-size: 0.8rem; border-radius: var(--radius-sm);" onclick="alert('Cancel Request received.')">Cancel</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECTION 3: CUSTOM RECOMMENDATIONS -->
+            <section class="dashboard-card animate-on-scroll" id="recommended-dishes">
+                <div class="card-header">
+                    <h3><i class="fas fa-heart"></i> Specially Curated For Your Taste</h3>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    <!-- Rec 1 -->
+                    <div class="dish-card">
+                        <div class="dish-image" style="height: 180px;">
+                            <img src="images/dish1.webp" alt="Truffle Steak" style="height: 100%; width: 100%; object-fit: cover;">
+                        </div>
+                        <div class="dish-info" style="padding: 15px;">
+                            <h4 style="margin-bottom: 5px;">Truffle Glazed Ribeye</h4>
+                            <p style="font-size: 0.85rem; margin-bottom: 10px;">Matched 98% with your preference for aged beef steaks.</p>
+                            <a href="services.html" class="primary-btn" style="padding: 8px 16px; font-size: 0.8rem;">Pre-order Dish</a>
+                        </div>
+                    </div>
+                    <!-- Rec 2 -->
+                    <div class="dish-card">
+                        <div class="dish-image" style="height: 180px;">
+                            <img src="images/dish3.webp" alt="Lobster Pasta" style="height: 100%; width: 100%; object-fit: cover;">
+                        </div>
+                        <div class="dish-info" style="padding: 15px;">
+                            <h4 style="margin-bottom: 5px;">Saffron Lobster Ravioli</h4>
+                            <p style="font-size: 0.85rem; margin-bottom: 10px;">Matched 92% based on your recent seafood purchases.</p>
+                            <a href="services.html" class="primary-btn" style="padding: 8px 16px; font-size: 0.8rem;">Pre-order Dish</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: ORDER HISTORY -->
+            <section class="dashboard-card animate-on-scroll" id="past-orders">
+                <div class="card-header">
+                    <h3><i class="fas fa-clock-rotate-left"></i> Past Gourmet Delivery Orders</h3>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Items Ordered</th>
+                                <th>Date</th>
+                                <th>Total Cost</th>
+                                <th>Delivery Address</th>
+                                <th>Receipt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>#ORD-10492</strong></td>
+                                <td>Atlantic Pan-Seared Salmon x2, Citrus Salad x1</td>
+                                <td>May 20, 2026</td>
+                                <td>$84.50</td>
+                                <td>45 Broad St, Apt 4C, NY</td>
+                                <td><a href="#" style="color: var(--color-primary);"><i class="fas fa-file-invoice-dollar"></i> PDF Receipt</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#ORD-09871</strong></td>
+                                <td>Truffle Glazed Ribeye x1, Saffron Lobster Ravioli x1</td>
+                                <td>April 12, 2026</td>
+                                <td>$90.00</td>
+                                <td>45 Broad St, Apt 4C, NY</td>
+                                <td><a href="#" style="color: var(--color-primary);"><i class="fas fa-file-invoice-dollar"></i> PDF Receipt</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="logo" style="margin-bottom: 20px;" id="footerLogo">
+                    <div class="logo-icon">
+                        <i class="fas fa-bowl-food"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h2>STACKLY</h2>
+                        <span>FOODS</span>
+                    </div>
+                </a>
+                <p>Bringing you the fine art of luxurious dining, organic ingredients, and curated sensory experiences designed to make every meal memorable.</p>
+                <div class="footer-social">
+                    <a href="https://facebook.com" target="_blank" id="facebookLink"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" id="instagramLink"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" id="twitterLink"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://youtube.com" target="_blank" id="youtubeLink"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html" id="footerLinkHome">Home</a></li>
+                    <li><a href="about.html" id="footerLinkAbout">About Us</a></li>
+                    <li><a href="services.html" id="footerLinkServices">Services</a></li>
+                    <li><a href="blog.html" id="footerLinkBlog">Blog & News</a></li>
+                    <li><a href="contact.html" id="footerLinkContact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>102 Culinary Plaza, Suite 500, Gastronomy District, NY 10001</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span><a href="tel:+15551234567" id="footerPhone">+1 (555) 123-4567</a></span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:info@stacklyfoods.com" id="footerEmail">info@stacklyfoods.com</a></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive cooking tips, special offers, and recipes.</p>
+                <form class="newsletter-form" id="footerNewsletterForm">
+                    <input type="email" placeholder="Your Email..." required id="footerNewsletterEmail">
+                    <button type="submit" id="footerNewsletterSubmitBtn"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stackly Foods. All rights reserved. Designed with passion by Antigravity. | <a href="#" id="privacyPolicyLink">Privacy Policy</a> | <a href="#" id="termsOfServiceLink">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="js/script.js"></script>
+</body>
+</html>

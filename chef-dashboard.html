@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Dashboard | Stackly Foods</title>
+    <meta name="description" content="Manage kitchen prep, live dining tickets, and daily gourmet menu creations.">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specific Dashboard overrides to look premium and aligned */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .dashboard-card {
+            background: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-card);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--color-border-light);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .card-header h3 {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-header h3 i {
+            color: var(--color-primary);
+        }
+        .dashboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        .dashboard-table th, .dashboard-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--color-border-light);
+        }
+        .dashboard-table th {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+        .dashboard-table td {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+        .badge {
+            padding: 4px 12px;
+            border-radius: var(--radius-xl);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge-success { background: rgba(16, 185, 129, 0.15); color: var(--color-accent); }
+        .badge-warning { background: rgba(255, 159, 28, 0.15); color: #FF9F1C; }
+        .badge-info { background: rgba(212, 175, 55, 0.15); color: var(--color-primary); }
+        .badge-danger { background: rgba(212, 70, 59, 0.15); color: var(--color-secondary); }
+        .profile-banner {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: linear-gradient(135deg, var(--color-bg-light), var(--color-bg-lighter));
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin-top: 50px;
+        }
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-full);
+            background: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--color-text-dark);
+            border: 3px solid var(--color-primary);
+        }
+        .profile-info h2 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        .membership-badge {
+            display: inline-block;
+            background: linear-gradient(95deg, var(--color-primary), var(--color-secondary));
+            color: var(--color-text-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: var(--radius-xl);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+        /* Specific Chef checklist styles */
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+            color: var(--color-text-muted);
+        }
+        .checklist-item input[type="checkbox"] {
+            accent-color: var(--color-primary);
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .live-order-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-normal);
+        }
+        .live-order-card:hover {
+            border-color: var(--color-primary);
+            transform: scale(1.01);
+        }
+        .order-meta h4 {
+            font-size: 1.15rem;
+            color: var(--color-text);
+            margin-bottom: 5px;
+        }
+        .order-meta p {
+            font-size: 0.85rem;
+        }
+        .designer-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .designer-form .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        .designer-form input, .designer-form textarea {
+            width: 100%;
+            padding: 12px;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            color: var(--color-text);
+        }
+        .designer-form label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+            color: var(--color-text);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar scrolled" id="mainNavbar">
+            <a href="index.html" class="logo" id="logoLink">
+                <div class="logo-icon">
+                    <i class="fas fa-bowl-food"></i>
+                </div>
+                <div class="logo-text">
+                    <h2>STACKLY</h2>
+                    <span>FOODS</span>
+                </div>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" id="navHome">Home</a></li>
+                <li><a href="about.html" id="navAbout">About Us</a></li>
+                <li><a href="services.html" id="navServices">Services</a></li>
+                <li><a href="blog.html" id="navBlog">Blog</a></li>
+                <li><a href="contact.html" id="navContact">Contact</a></li>
+                <li><a href="#" class="active" id="navDashboard">Dashboard</a></li>
+                <li><a href="index.html" class="btn-nav" id="navLogout">Log Out</a></li>
+            </ul>
+
+            <div class="menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 120px; padding-bottom: 80px;">
+        
+        <!-- SECTION 1: PROFILE BANNER -->
+        <section class="profile-banner animate-on-scroll" id="chef-profile">
+            <div class="profile-avatar">
+                <i class="fas fa-hat-chef"></i>
+            </div>
+            <div class="profile-info">
+                <h2>Chef Marcus Thorne</h2>
+                <p>Kitchen Commander & Executive Head Chef. Currently managing food prep cycles and menu formulations.</p>
+                <div class="membership-badge">Kitchen Status: Active</div>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: var(--color-text-muted);">Shift ends in: <strong>4.5 hours</strong> | Station: <strong>Hot Prep / Plating</strong></p>
+            </div>
+        </section>
+
+        <div class="dashboard-grid">
+            
+            <!-- SECTION 2: ACTIVE LIVE TICKETS -->
+            <section class="dashboard-card animate-on-scroll" id="active-tickets">
+                <div class="card-header">
+                    <h3><i class="fas fa-fire-burner"></i> Live Kitchen Order Tickets</h3>
+                    <span class="badge badge-danger">3 Tickets Active</span>
+                </div>
+                <!-- Ticket 1 -->
+                <div class="live-order-card">
+                    <div class="order-meta">
+                        <h4>Ticket #KOT-085 (Table 4)</h4>
+                        <p>Items: <strong>Truffle Glazed Ribeye x2 (Medium Rare), Atlantic Salmon x1</strong></p>
+                        <p style="color: var(--color-secondary); font-size: 0.8rem;"><i class="fas fa-triangle-exclamation"></i> Special Request: No garlic in Salmon sauce.</p>
+                    </div>
+                    <div>
+                        <span class="badge badge-warning">Cooking</span>
+                        <button class="primary-btn" style="padding: 8px 16px; font-size: 0.8rem; margin-left: 10px;" onclick="alert('Ticket flagged as PLATED! Food runner notified.')">Mark Plated</button>
+                    </div>
+                </div>
+                <!-- Ticket 2 -->
+                <div class="live-order-card">
+                    <div class="order-meta">
+                        <h4>Ticket #KOT-086 (Table 12)</h4>
+                        <p>Items: <strong>Saffron Lobster Ravioli x1, Saffron Risotto side x1</strong></p>
+                    </div>
+                    <div>
+                        <span class="badge badge-info">Prep Station</span>
+                        <button class="primary-btn" style="padding: 8px 16px; font-size: 0.8rem; margin-left: 10px;" onclick="alert('Ticket flagged as PLATED! Food runner notified.')">Mark Plated</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: KITCHEN PREP CHECKLIST -->
+            <section class="dashboard-card animate-on-scroll" id="prep-checklist">
+                <div class="card-header">
+                    <h3><i class="fas fa-list-check"></i> Daily Ingredient Prep Checklist</h3>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-sauces" checked>
+                    <label for="check-sauces">Reduce Classical French Mother Sauces (Hollandaise & Velouté)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-lobster">
+                    <label for="check-lobster">Butter-poach Maine Lobster portions (15 servings prepared)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-asparagus" checked>
+                    <label for="check-asparagus">Trim wild organic green asparagus stems and clean microgreens</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-stocks">
+                    <label for="check-stocks">Simmer organic veal stock reduction for ribeye steak glaze</label>
+                </div>
+            </section>
+
+            <!-- SECTION 4: MENU DESIGNER CONSOLE -->
+            <section class="dashboard-card animate-on-scroll" id="menu-designer">
+                <div class="card-header">
+                    <h3><i class="fas fa-pen-nib"></i> Publish Daily Gourmet Special</h3>
+                </div>
+                <form class="designer-form" onsubmit="event.preventDefault(); alert('Chef Special successfully posted to Stackly Foods Menu!'); this.reset();">
+                    <div class="form-group">
+                        <label for="special-title">Dish Title *</label>
+                        <input type="text" id="special-title" placeholder="e.g. Herb Crusted Lamb Chops" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="special-price">Target Price ($) *</label>
+                        <input type="text" id="special-price" placeholder="e.g. 52.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="special-badge">Highlight Badge</label>
+                        <input type="text" id="special-badge" placeholder="e.g. Chef Special / Limited Stock">
+                    </div>
+                    <div class="form-group">
+                        <label for="special-pairing">Wine Pairing Recommendation</label>
+                        <input type="text" id="special-pairing" placeholder="e.g. Bordeaux Reserve 2019">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="special-description">Dish Ingredients & Prep Description *</label>
+                        <textarea id="special-description" placeholder="Describe flavor profile, ingredients sourcing, and visual styling details..." required style="min-height: 80px;"></textarea>
+                    </div>
+                    <div class="form-group full-width" style="text-align: center; margin-top: 10px;">
+                        <button type="submit" class="primary-btn">Publish to Menu Live</button>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="logo" style="margin-bottom: 20px;" id="footerLogo">
+                    <div class="logo-icon">
+                        <i class="fas fa-bowl-food"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h2>STACKLY</h2>
+                        <span>FOODS</span>
+                    </div>
+                </a>
+                <p>Bringing you the fine art of luxurious dining, organic ingredients, and curated sensory experiences designed to make every meal memorable.</p>
+                <div class="footer-social">
+                    <a href="https://facebook.com" target="_blank" id="facebookLink"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" id="instagramLink"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" id="twitterLink"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://youtube.com" target="_blank" id="youtubeLink"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html" id="footerLinkHome">Home</a></li>
+                    <li><a href="about.html" id="footerLinkAbout">About Us</a></li>
+                    <li><a href="services.html" id="footerLinkServices">Services</a></li>
+                    <li><a href="blog.html" id="footerLinkBlog">Blog & News</a></li>
+                    <li><a href="contact.html" id="footerLinkContact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>102 Culinary Plaza, Suite 500, Gastronomy District, NY 10001</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span><a href="tel:+15551234567" id="footerPhone">+1 (555) 123-4567</a></span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:info@stacklyfoods.com" id="footerEmail">info@stacklyfoods.com</a></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive cooking tips, special offers, and recipes.</p>
+                <form class="newsletter-form" id="footerNewsletterForm">
+                    <input type="email" placeholder="Your Email..." required id="footerNewsletterEmail">
+                    <button type="submit" id="footerNewsletterSubmitBtn"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stackly Foods. All rights reserved. Designed with passion by Antigravity. | <a href="#" id="privacyPolicyLink">Privacy Policy</a> | <a href="#" id="termsOfServiceLink">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="js/script.js"></script>
+</body>
+</html>
