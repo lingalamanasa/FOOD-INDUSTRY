@@ -1,5 +1,5 @@
 /* ============================================
-   STACKLY FOODS - Food Industry Theme
+   STACKLY AGSEC - Food Security Theme
    Complete JavaScript
    ============================================ */
 
@@ -77,10 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const typingElement = document.getElementById('typingText');
   if (typingElement) {
     const phrases = [
-      'Discover the Art of Fine Dining',
-      'Fresh Ingredients, Bold Flavors',
-      'From Farm to Fork Excellence',
-      'Culinary Journeys Await You'
+      'IoT Crop Diagnostics & Safety',
+      'Resilient Grain Silo Telemetry',
+      'Secure Cold-Chain Logistics Monitoring',
+      'Sourcing Traceability Verified'
     ];
     let phraseIndex = 0;
     let charIndex = 0;
@@ -255,14 +255,27 @@ document.addEventListener('DOMContentLoaded', () => {
       <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
       <span class="toast-message">${message}</span>
     `;
+    toast.style.position = 'fixed';
+    toast.style.bottom = '20px';
+    toast.style.right = '20px';
+    toast.style.backgroundColor = type === 'success' ? '#10b981' : '#ef4444';
+    toast.style.color = '#0f172a';
+    toast.style.padding = '12px 24px';
+    toast.style.borderRadius = '8px';
+    toast.style.zIndex = '9999';
+    toast.style.fontWeight = '600';
+    toast.style.boxShadow = '0 10px 25px rgba(0,0,0,0.3)';
+    toast.style.opacity = '0';
+    toast.style.transition = 'opacity 0.3s ease';
+
     document.body.appendChild(toast);
 
     // Trigger animation
-    setTimeout(() => toast.classList.add('show'), 10);
+    setTimeout(() => toast.style.opacity = '1', 10);
 
     // Auto remove
     setTimeout(() => {
-      toast.classList.remove('show');
+      toast.style.opacity = '0';
       setTimeout(() => toast.remove(), 300);
     }, 3500);
   }
@@ -333,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Subject
       if (subject && subject.value.trim().length < 3) {
-        showError(subject.closest('.form-group'), 'Please enter a subject');
+        showError(subject.closest('.form-group'), 'Please enter a location/city');
         isValid = false;
       }
 
@@ -344,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (isValid) {
-        showToast('Your message has been sent successfully!', 'success');
+        showToast('Your diagnostic request has been sent successfully!', 'success');
         contactForm.reset();
       }
     });
@@ -378,6 +391,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (isValid) {
         const selectedRole = roleSelect.value;
+        const enteredEmail = email.value.trim().toLowerCase();
+        const storedEmail = localStorage.getItem('registeredEmail');
+        
+        // Extract default username from email
+        let displayName = enteredEmail.split('@')[0];
+        displayName = displayName.charAt(0).toUpperCase() + displayName.slice(1);
+        
+        // If matches registered email, use registered name
+        if (storedEmail && enteredEmail === storedEmail) {
+          const registeredName = localStorage.getItem('registeredName');
+          if (registeredName) {
+            displayName = registeredName;
+          }
+        }
+        
+        localStorage.setItem('currentUser', displayName);
+
         showToast(`Login successful! Redirecting to ${selectedRole} dashboard...`, 'success');
         setTimeout(() => {
           if (selectedRole === 'admin') {
@@ -431,6 +461,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (isValid) {
+        // Save user registration data
+        localStorage.setItem('registeredName', name.value.trim());
+        localStorage.setItem('registeredEmail', email.value.trim().toLowerCase());
+
         showToast('Account created successfully! Redirecting to login...', 'success');
         setTimeout(() => {
           window.location.href = 'login.html';
@@ -446,11 +480,29 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const emailInput = form.querySelector('input[type="email"]');
       if (emailInput && validateEmail(emailInput.value.trim())) {
-        showToast('Subscribed successfully! Welcome to Stackly Foods.', 'success');
+        showToast('Subscribed successfully! Welcome to Stackly AgSec.', 'success');
         emailInput.value = '';
       } else {
         showToast('Please enter a valid email address.', 'error');
       }
     });
+  });
+
+  // ---- Inject Logged-In Username into Dashboards ----
+  const usernameSpan = document.getElementById('dashboard-username');
+  if (usernameSpan) {
+    const user = localStorage.getItem('currentUser');
+    if (user) {
+      usernameSpan.textContent = user;
+    }
+  }
+
+  // ---- Log Out Handler ----
+  document.querySelectorAll('a').forEach(link => {
+    if (link.textContent.includes('Log Out')) {
+      link.addEventListener('click', () => {
+        localStorage.removeItem('currentUser');
+      });
+    }
   });
 });

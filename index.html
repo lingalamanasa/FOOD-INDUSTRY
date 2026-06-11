@@ -1,398 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stackly Foods | Premium Culinary Excellence & Gourmet Dining</title>
-    <meta name="description" content="Welcome to Stackly Foods, where gourmet food meets visual artistry. Explore our curated menu, signature dishes, master chefs, and organic ingredients.">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Stackly || Food Security & Agricultural Resilience</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
-    <header>
-        <nav class="navbar" id="mainNavbar">
-            <a href="index.html" class="logo" id="logoLink">
-                <div class="logo-icon">
-                    <i class="fas fa-bowl-food"></i>
-                </div>
-                <div class="logo-text">
-                    <h2>STACKLY</h2>
-                    <span>FOODS</span>
-                </div>
-            </a>
+<!-- 1. Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+      <img src="images/logo.webp" alt="Stackly AgSec Logo" class="logo-img">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html"><i class="bi bi-house-door"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html"><i class="bi bi-shield-check"></i> About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="services.html"><i class="bi bi-shield-check"></i> Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html"><i class="bi bi-journal-text"></i> Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a>
+        </li>
+        <li class="nav-item dropdown ms-lg-3">
+          <a class="nav-link dropdown-toggle profile-icon" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-person-circle fs-4"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
+            <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-in-right"></i> Login</a></li>
+            <li><a class="dropdown-item" href="register.html"><i class="bi bi-person-plus"></i> Register</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active" id="navHome">Home</a></li>
-                <li><a href="about.html" id="navAbout">About Us</a></li>
-                <li><a href="services.html" id="navServices">Services</a></li>
-                <li><a href="blog.html" id="navBlog">Blog</a></li>
-                <li><a href="contact.html" id="navContact">Contact</a></li>
-                <li><a href="login.html" id="navLogin">Login</a></li>
-                <li><a href="register.html" class="btn-nav" id="navRegister">Get Started</a></li>
+<!-- 2. Hero Section -->
+<section class="hero-section d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 text-content">
+        <h1 class="hero-title">
+          <span>Food Security</span> <br> made resilient
+        </h1>
+        <p class="hero-text">
+          Designed to protect global food chains and agricultural assets. We provide IoT crop monitoring, real-time risk assessment, and secure distribution channels on one unified platform with expert agronomist guidance.
+        </p>
+        <div class="hero-buttons">
+          <a href="error.html" class="btn btn-cyber">Explore Services</a>
+          <a href="error.html" class="btn btn-link-custom">Our Technology</a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="images/welcome.webp" class="img-fluid hero-img" alt="Food Security Hero Image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Stats Section -->
+<section class="stats-section">
+  <div class="container">
+    <h2 class="text-center stats-title">Award-Winning Agricultural Resilience</h2>
+    <div class="row mt-5">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="stat-card text-center">
+          <i class="bi bi-shield-check stat-icon"></i>
+          <h3 class="counter stat-number" data-target="4500" data-suffix="+">0</h3>
+          <p>Farms Monitored</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="stat-card text-center">
+          <i class="bi bi-globe stat-icon"></i>
+          <h3 class="counter stat-number" data-target="80" data-suffix="+">0</h3>
+          <p>Regions Secured</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="stat-card text-center">
+          <i class="bi bi-award stat-icon"></i>
+          <h3 class="counter stat-number" data-target="95" data-suffix="%">0</h3>
+          <p>Security Index</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Why Choose Section -->
+<section class="choose-section">
+  <div class="container">
+    <h2 class="text-center section-title">Why choose <span>Stackly AgSec</span>?</h2>
+    <div class="tabs text-center mt-4">
+      <button class="tab-btn active" onclick="showTab('protection')">Crop Protection</button>
+      <button class="tab-btn" onclick="showTab('performance')">Yield Performance</button>
+      <button class="tab-btn" onclick="showTab('easy')">Easy Diagnostics</button>
+    </div>
+    <div class="tab-content mt-5">
+      <!-- Tab 1 -->
+      <div class="tab-pane active" id="protection">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h3>Complete Bio-Defense</h3>
+            <p>Stackly AgSec uses advanced IoT and machine learning algorithms to detect soil pathogens and pest intrusions before they impact harvest yield.</p>
+            <ul>
+              <li><i class="bi bi-check-circle-fill"></i> Continuous crop health surveillance</li>
+              <li><i class="bi bi-check-circle-fill"></i> Automatic disease alert triggers</li>
+              <li><i class="bi bi-check-circle-fill"></i> Secure supply chain records</li>
             </ul>
-
-            <div class="menu-btn" id="menuBtn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
-
-    <!-- SECTION 1: HERO SLIDER -->
-    <section class="hero" id="home">
-        <div class="slider">
-            <div class="slide active" style="background-image: url('images/hero1.webp');"></div>
-            <div class="slide" style="background-image: url('images/hero2.webp');"></div>
-            <div class="slide" style="background-image: url('images/hero3.webp');"></div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img src="images/hero1.webp" class="img-fluid tab-img" alt="Bio Defense">
+          </div>
         </div>
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h1><span id="typingText"></span></h1>
-            <p>Experience culinary artistry, masterfully prepared dishes using organic farm-fresh ingredients, and an ambiance that enchants all your senses.</p>
-            <div class="hero-buttons">
-                <a href="services.html" class="primary-btn" id="heroExploreBtn">Explore Menu</a>
-                <a href="about.html" class="secondary-btn" id="heroStoryBtn">Our Story</a>
-            </div>
+      </div>
+      <!-- Tab 2 -->
+      <div class="tab-pane" id="performance">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h3>Optimizing Soil & Output</h3>
+            <p>Lightweight remote monitoring sensors running on solar power continuously track moisture, nutrients, and temperature conditions to guide irrigation cycles.</p>
+            <ul>
+              <li><i class="bi bi-check-circle-fill"></i> Automated soil data gathering</li>
+              <li><i class="bi bi-check-circle-fill"></i> Weekly yield predictions</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img src="images/hero2.webp" class="img-fluid tab-img" alt="Soil Optimization">
+          </div>
         </div>
-    </section>
+      </div>
+      <!-- Tab 3 -->
+      <div class="tab-pane" id="easy">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h3>Simple Partner Console</h3>
+            <p>Get complete insight into crop indices, soil history, and order logs through an intuitive desktop and mobile interface designed for farmers.</p>
+            <ul>
+              <li><i class="bi bi-check-circle-fill"></i> Customizable threat alerts</li>
+              <li><i class="bi bi-check-circle-fill"></i> Direct agricultural advisor chat</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img src="images/hero3.webp" class="img-fluid tab-img" alt="Partner Console">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- SECTION 2: WELCOME SECTION -->
-    <section class="welcome-section animate-on-scroll" id="welcome">
-        <div class="container welcome-container">
-            <div class="welcome-image animate-slide-left">
-                <img src="images/welcome.webp" alt="Gourmet Dining Experience" id="welcomeImg">
+<!-- 5. Platforms Section -->
+<section class="platform-section">
+  <div class="container text-center">
+    <h2 class="platform-title">If you are a Farmer or Distributor, we have got great news.</h2>
+    <p class="platform-subtitle">Stackly AgSec packages offer specialized applications where you need them most</p>
+    <div class="row mt-5">
+      <!-- Card 1 -->
+      <div class="col-lg-6 mb-4">
+        <div class="platform-card">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-start">
+              <p class="small-text">Farmer Dashboard</p>
+              <h4>AgSec for Growers</h4>
+              <p>Essential diagnostic tools to safeguard crop outputs and inspect soil indices.</p>
+              <a href="error.html" class="know-btn">Know More <i class="bi bi-arrow-right"></i></a>
             </div>
-            <div class="welcome-text animate-slide-right">
-                <div class="section-header" style="text-align: left; margin-bottom: 30px;">
-                    <h2>Welcome to <span class="highlight">Stackly Foods</span></h2>
-                </div>
-                <p>Founded with a passion for culinary distinction, Stackly Foods has redefined the standard of luxury dining. We believe that food is not just sustenance, but an emotional and sensory journey.</p>
-                <p>Our kitchen is led by award-winning chefs who combine traditional techniques with modern gastronomy to serve masterpieces on every plate.</p>
-                <div class="welcome-features">
-                    <div class="welcome-feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>100% Organic Ingredients</span>
-                    </div>
-                    <div class="welcome-feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Award-winning Chefs</span>
-                    </div>
-                    <div class="welcome-feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Luxurious Ambiance</span>
-                    </div>
-                    <div class="welcome-feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Exquisite Wine Pairing</span>
-                    </div>
-                </div>
-                <a href="about.html" class="primary-btn" id="welcomeLearnBtn">Learn More</a>
+            <div class="col-md-6 text-center">
+              <img src="images/blog4.webp" class="img-fluid card-img" alt="Farmer App">
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-lg-6 mb-4">
+        <div class="platform-card">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-start">
+              <p class="small-text">Distributor App</p>
+              <h4>Cold-Chain Logistics</h4>
+              <p>Real-time logistics, humidity controls, and secure grain delivery tracking.</p>
+              <a href="error.html" class="know-btn">Know More <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="col-md-6 text-center">
+              <img src="images/blog5.webp" class="img-fluid card-img" alt="Distributor App">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- SECTION 3: SIGNATURE DISHES -->
-    <section class="dishes-section animate-on-scroll" id="dishes">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our <span class="highlight">Signature Dishes</span></h2>
-                <p>Hand-crafted culinary creations that highlight our chefs' innovation, precision, and passion.</p>
-            </div>
-            <div class="dishes-grid">
-                <!-- Dish 1 -->
-                <div class="dish-card animate-scale delay-1">
-                    <div class="dish-image">
-                        <img src="images/dish1.webp" alt="Truffle Glazed Ribeye" id="dishImg1">
-                        <span class="dish-badge">Chef's Choice</span>
-                    </div>
-                    <div class="dish-info">
-                        <div class="dish-meta">
-                            <span class="dish-price">$48.00</span>
-                            <div class="dish-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <h3>Truffle Glazed Ribeye</h3>
-                        <p>Prime aged beef ribeye, glazed with white truffle butter, served alongside wood-fired wild mushrooms and roasted asparagus.</p>
-                    </div>
-                </div>
-                <!-- Dish 2 -->
-                <div class="dish-card animate-scale delay-2">
-                    <div class="dish-image">
-                        <img src="images/dish2.webp" alt="Pan-Seared Salmon" id="dishImg2">
-                        <span class="dish-badge">Popular</span>
-                    </div>
-                    <div class="dish-info">
-                        <div class="dish-meta">
-                            <span class="dish-price">$36.50</span>
-                            <div class="dish-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                        <h3>Atlantic Pan-Seared Salmon</h3>
-                        <p>Crispy skin salmon filet rested on creamy saffron risotto, finished with a bright citrus herb reduction and microgreens.</p>
-                    </div>
-                </div>
-                <!-- Dish 3 -->
-                <div class="dish-card animate-scale delay-3">
-                    <div class="dish-image">
-                        <img src="images/dish3.webp" alt="Saffron Lobster Ravioli" id="dishImg3">
-                        <span class="dish-badge">Signature</span>
-                    </div>
-                    <div class="dish-info">
-                        <div class="dish-meta">
-                            <span class="dish-price">$42.00</span>
-                            <div class="dish-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <h3>Saffron Lobster Ravioli</h3>
-                        <p>House-made pasta filled with butter-poached Maine lobster, draped in a rich saffron-infused lobster cream sauce.</p>
-                    </div>
-                </div>
-            </div>
+<!-- 6. Services Section -->
+<section class="services-section">
+  <div class="container">
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6">
+        <h1 class="service-title">Our Food Security Services</h1>
+        <p class="service-text">
+          Run your agricultural operations confidently while Stackly AgSec monitors, audits, and mitigates biological and supply chain threats.
+        </p>
+        <a href="contact.html" class="chat-btn">Request Audit</a>
+      </div>
+      <div class="col-lg-6 text-center">
+        <div class="circle-design"></div>
+      </div>
+    </div>
+    <div class="row g-4">
+      <!-- Cards -->
+      <div class="col-lg-6">
+        <div class="service-card">
+          <h3>Crop & Soil Diagnostics</h3>
+          <p>Advanced lab analysis and genetic testing to pinpoint crop diseases and implement organic remediation paths.</p>
+          <a href="services.html" class="arrow-btn"><i class="bi bi-arrow-right"></i></a>
         </div>
-    </section>
+      </div>
+      <div class="col-lg-6">
+        <div class="service-card">
+          <h3>Weather & Pest Intelligence</h3>
+          <p>Continuous predictive models utilizing regional sensor arrays to forecast pest waves and climate shifts.</p>
+          <a href="services.html" class="arrow-btn"><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="service-card">
+          <h3>Supply Traceability</h3>
+          <p>End-to-end QR and secure ledger tracking from harvest nodes to customer markets, verifying pesticide levels.</p>
+          <a href="services.html" class="arrow-btn"><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="service-card">
+          <h3>Supply Chain Stress Testing</h3>
+          <p>Simulating logistics bottlenecks, transport blockades, and storage leaks to guarantee grain reserve endurance.</p>
+          <a href="services.html" class="arrow-btn"><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="service-card">
+          <h3>Quality & Adulteration Control</h3>
+          <p>Assuring food and grain purity standards, testing for contamination, mold, or illegal pesticide concentrations.</p>
+          <a href="services.html" class="arrow-btn"><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="service-card">
+          <h3>Cold-Chain & Storage Auditing</h3>
+          <p>Evaluating refrigeration parameters, silos integrity, and humidity levels to prevent storage decay losses.</p>
+          <a href="services.html" class="arrow-btn"><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- SECTION 4: WHY CHOOSE US -->
-    <section class="features-section animate-on-scroll" id="why-choose-us">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why <span class="highlight">Choose Us</span></h2>
-                <p>We combine exquisite gastronomy, uncompromising service standards, and a passion for absolute culinary perfection.</p>
-            </div>
-            <div class="features-grid">
-                <!-- Card 1 -->
-                <div class="feature-card animate-scale delay-1">
-                    <div class="feature-icon">
-                        <i class="fas fa-wheat-awn"></i>
-                    </div>
-                    <h3>Organic Ingredients</h3>
-                    <p>We source all of our fruits, vegetables, and herbs directly from certified local organic farms daily.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="feature-card animate-scale delay-2">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>Master Chefs</h3>
-                    <p>Our culinary masters have trained in Michelin-starred kitchens around the world to craft your menus.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="feature-card animate-scale delay-3">
-                    <div class="feature-icon">
-                        <i class="fas fa-wine-glass-alt"></i>
-                    </div>
-                    <h3>Exquisite Pairings</h3>
-                    <p>Our resident sommelier carefully curates a selection of fine vintage wines to elevate every course.</p>
-                </div>
-                <!-- Card 4 -->
-                <div class="feature-card animate-scale delay-4">
-                    <div class="feature-icon">
-                        <i class="fas fa-truck-ramp-box"></i>
-                    </div>
-                    <h3>Hygienic Sourcing</h3>
-                    <p>We enforce strict quality control standards and cold chain logistics to maintain absolute freshness.</p>
-                </div>
-            </div>
+<!-- 7. Business Tools Section -->
+<section class="business-section">
+  <div class="container">
+    <h2 class="business-title text-center">Tools built to protect the needs of modern farmers</h2>
+    <div class="row align-items-center mt-5">
+      <div class="col-lg-6 text-center">
+        <div class="image-box">
+          <img src="images/cta_bg.webp" class="img-fluid" alt="AgSec Tools">
         </div>
-    </section>
+      </div>
+      <div class="col-lg-6">
+        <h3>Robust protection for local farm cooperatives</h3>
+        <p>Stackly AgSec helps smallholders and farming cooperatives set up biological defenses easily while optimizing grain storage reserves.</p>
+        <ul class="business-list">
+          <li><i class="bi bi-check-circle-fill"></i> Plug-and-play IoT sensors</li>
+          <li><i class="bi bi-check-circle-fill"></i> Low-maintenance setups</li>
+          <li><i class="bi bi-check-circle-fill"></i> Affordable regional options</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row align-items-center mt-5 flex-lg-row-reverse">
+      <div class="col-lg-6 text-center">
+        <div class="image-box">
+          <img src="images/story.webp" class="img-fluid" alt="Logistics tools">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h3>Maximize supply safety with endpoint tracking</h3>
+        <p>Stackly grain transport security seals and route scanners safeguard logistics networks against adulteration and product loss.</p>
+        <ul class="business-list">
+          <li><i class="bi bi-check-circle-fill"></i> Real-time secure transport metrics</li>
+          <li><i class="bi bi-check-circle-fill"></i> Automatic temperature adjustments</li>
+          <li><i class="bi bi-check-circle-fill"></i> Instant dispatch notification alerts</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- SECTION 5: STATS COUNTER -->
-    <section class="stats-section animate-on-scroll" id="stats">
-        <div class="container stats-grid">
-            <!-- Stat 1 -->
-            <div class="stat-item">
-                <div class="stat-icon"><i class="fas fa-users"></i></div>
-                <div class="stat-number" data-target="15000" data-suffix="+">0</div>
-                <div class="stat-label">Happy Guests</div>
-            </div>
-            <!-- Stat 2 -->
-            <div class="stat-item">
-                <div class="stat-icon"><i class="fas fa-circle-check"></i></div>
-                <div class="stat-number" data-target="150" data-suffix="+">0</div>
-                <div class="stat-label">Gourmet Recipes</div>
-            </div>
-            <!-- Stat 3 -->
-            <div class="stat-item">
-                <div class="stat-icon"><i class="fas fa-medal"></i></div>
-                <div class="stat-number" data-target="25" data-suffix="+">0</div>
-                <div class="stat-label">Awards Won</div>
-            </div>
-            <!-- Stat 4 -->
-            <div class="stat-item">
-                <div class="stat-icon"><i class="fas fa-pepper-hot"></i></div>
-                <div class="stat-number" data-target="18" data-suffix="">0</div>
-                <div class="stat-label">Master Chefs</div>
-            </div>
+<!-- 8. Solutions Section -->
+<section class="solutions-section">
+  <div class="container text-center">
+    <h2 class="solutions-title">More agricultural security solutions for your needs</h2>
+    <p class="solutions-subtitle">No matter the scale of your harvest, Stackly has a system for you</p>
+    <div class="row mt-5 g-4">
+      <!-- Solution 1 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="solution-card">
+          <i class="bi bi-shield-check icon"></i>
+          <h5>Agri-Shield Optimum</h5>
+          <p>Adaptive soil diagnostics and pest prevention package for growing seasons.</p>
+          <a href="services.html" class="solution-btn">Learn More</a>
         </div>
-    </section>
+      </div>
+      <!-- Solution 2 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="solution-card">
+          <i class="bi bi-globe icon"></i>
+          <h5>IoT Crops Gateway</h5>
+          <p>Solar-powered sensor grids mapping farm microclimates continuously.</p>
+          <a href="services.html" class="solution-btn">Learn More</a>
+        </div>
+      </div>
+      <!-- Solution 3 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="solution-card">
+          <i class="bi bi-envelope icon"></i>
+          <h5>Harvest Alert System</h5>
+          <p>Direct notification channels warning farmers of weather anomalies.</p>
+          <a href="services.html" class="solution-btn">Learn More</a>
+        </div>
+      </div>
+      <!-- Solution 4 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="solution-card">
+          <i class="bi bi-microsoft icon"></i>
+          <h5>Inspector Platform</h5>
+          <p>Coordinated management tools for cooperative field audits.</p>
+          <a href="services.html" class="solution-btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- SECTION 6: SPECIAL OFFER CTA -->
-    <section class="cta-section animate-on-scroll" style="background-image: url('images/cta_bg.webp');" id="special-offer">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="cta-content">
-                <h2>Stackly Foods <span class="highlight">Grand Culinary Festival 2026</span></h2>
-                <p>Join us for an exclusive 7-course tasting menu paired with exceptional reserve wines. Guided by our Executive Master Chef, explore unique pairings, flavors, and secret recipes.</p>
-                <a href="contact.html" class="primary-btn" id="ctaReserveBtn">Reserve Your Table</a>
-            </div>
+<!-- 9. Footer Section -->
+<footer class="footer-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h3 class="footer-logo d-flex align-items-center">
+          <img src="images/logo.webp" alt="Stackly AgSec Logo" class="footer-logo-img me-2">
+        </h3>
+        <p class="footer-text">
+          Advanced biological defense and logistics solutions safeguarding crop health, grain reserves, and global distribution nodes.
+        </p>
+        <div class="social-icons">
+          <a href="error.html"><i class="bi bi-facebook"></i></a>
+          <a href="error.html"><i class="bi bi-twitter-x"></i></a>
+          <a href="error.html"><i class="bi bi-linkedin"></i></a>
+          <a href="error.html"><i class="bi bi-instagram"></i></a>
         </div>
-    </section>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="error.html">Careers</a></li>
+          <li><a href="blog.html">Blog & News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Crops Analysis</a></li>
+          <li><a href="services.html">Silo Protection</a></li>
+          <li><a href="services.html">Biosecurity Audits</a></li>
+          <li><a href="services.html">Cold-Chain Logistics</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="error.html">Help Center</a></li>
+          <li><a href="error.html">Privacy Policy</a></li>
+          <li><a href="error.html">Terms & Conditions</a></li>
+          <li><a href="error.html">System Status</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      <p>&copy; 2026 Stackly AgSec. All rights reserved. Designed with passion by Antigravity.</p>
+    </div>
+  </div>
+</footer>
 
-    <!-- SECTION 7: LATEST FOOD NEWS -->
-    <section class="news-section animate-on-scroll" id="news">
-        <div class="container">
-            <div class="section-header">
-                <h2>Culinary <span class="highlight">Insights & News</span></h2>
-                <p>Read the latest articles from our chefs about cooking techniques, ingredients, and industry secrets.</p>
-            </div>
-            <div class="news-grid">
-                <!-- News 1 -->
-                <div class="news-card animate-slide-left delay-1">
-                    <div class="news-image">
-                        <img src="images/news1.webp" alt="The Art of Plate Styling" id="newsImg1">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="category-badge">Culinary Art</span>
-                            <span><i class="far fa-calendar"></i> June 8, 2026</span>
-                        </div>
-                        <h3>The Art of Plate Styling & Visual Gastronomy</h3>
-                        <p>Explore how our team utilizes colors, textures, and heights to turn plates into stunning works of visual art before serving.</p>
-                        <a href="blog.html" class="read-more" id="newsReadMore1">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <!-- News 2 -->
-                <div class="news-card animate-scale delay-2">
-                    <div class="news-image">
-                        <img src="images/news2.webp" alt="Sourcing Sustainable Truffles" id="newsImg2">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="category-badge">Ingredients</span>
-                            <span><i class="far fa-calendar"></i> May 24, 2026</span>
-                        </div>
-                        <h3>Sourcing Sustainable Truffles: A Chef's Guide</h3>
-                        <p>Learn how we partner with sustainable truffle growers in Italy and France to bring premium, earthy flavors to your table.</p>
-                        <a href="blog.html" class="read-more" id="newsReadMore2">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <!-- News 3 -->
-                <div class="news-card animate-slide-right delay-3">
-                    <div class="news-image">
-                        <img src="images/news3.webp" alt="Perfect Wine Pairing Rules" id="newsImg3">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="category-badge">Wine & Dine</span>
-                            <span><i class="far fa-calendar"></i> May 12, 2026</span>
-                        </div>
-                        <h3>The Rules of Perfect Wine and Cheese Pairing</h3>
-                        <p>Our master sommelier simplifies the complex rules of combining white, red, and sparkling wines with different kinds of cheeses.</p>
-                        <a href="blog.html" class="read-more" id="newsReadMore3">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- SECTION 8: COMMUNITY CTA (NEWSLETTER) -->
-    <section class="community-section animate-on-scroll" id="community">
-        <div class="container">
-            <h2>Join the <span class="highlight">Stackly Foods Community</span></h2>
-            <p>Sign up for our newsletter to receive exclusive recipes from our chefs, early tasting invitations, and special offers.</p>
-            <form class="newsletter-form" id="homeNewsletterForm">
-                <input type="email" placeholder="Enter your email address..." required id="newsletterEmail">
-                <button type="submit" id="newsletterSubmitBtn">Subscribe</button>
-            </form>
-        </div>
-    </section>
+<!-- Script -->
+<script src="js/script.js"></script>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container footer-grid">
-            <!-- Col 1 -->
-            <div class="footer-col footer-about">
-                <a href="index.html" class="logo" style="margin-bottom: 20px;" id="footerLogo">
-                    <div class="logo-icon">
-                        <i class="fas fa-bowl-food"></i>
-                    </div>
-                    <div class="logo-text">
-                        <h2>STACKLY</h2>
-                        <span>FOODS</span>
-                    </div>
-                </a>
-                <p>Bringing you the fine art of luxurious dining, organic ingredients, and curated sensory experiences designed to make every meal memorable.</p>
-                <div class="footer-social">
-                    <a href="https://facebook.com" target="_blank" id="facebookLink"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com" target="_blank" id="instagramLink"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com" target="_blank" id="twitterLink"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://youtube.com" target="_blank" id="youtubeLink"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <!-- Col 2 -->
-            <div class="footer-col footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html" id="footerLinkHome">Home</a></li>
-                    <li><a href="about.html" id="footerLinkAbout">About Us</a></li>
-                    <li><a href="services.html" id="footerLinkServices">Services</a></li>
-                    <li><a href="blog.html" id="footerLinkBlog">Blog & News</a></li>
-                    <li><a href="contact.html" id="footerLinkContact">Contact</a></li>
-                </ul>
-            </div>
-            <!-- Col 3 -->
-            <div class="footer-col footer-contact">
-                <h3>Contact Info</h3>
-                <ul>
-                    <li>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>102 Culinary Plaza, Suite 500, Gastronomy District, NY 10001</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone-alt"></i>
-                        <span><a href="tel:+15551234567" id="footerPhone">+1 (555) 123-4567</a></span>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <span><a href="mailto:info@stacklyfoods.com" id="footerEmail">info@stacklyfoods.com</a></span>
-                    </li>
-                </ul>
-            </div>
-            <!-- Col 4 -->
-            <div class="footer-col footer-newsletter">
-                <h3>Newsletter</h3>
-                <p>Subscribe to receive cooking tips, special offers, and recipes.</p>
-                <form class="newsletter-form" id="footerNewsletterForm">
-                    <input type="email" placeholder="Your Email..." required id="footerNewsletterEmail">
-                    <button type="submit" id="footerNewsletterSubmitBtn"><i class="fas fa-paper-plane"></i></button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Stackly Foods. All rights reserved. Designed with passion by Antigravity. | <a href="#" id="privacyPolicyLink">Privacy Policy</a> | <a href="#" id="termsOfServiceLink">Terms of Service</a></p>
-        </div>
-    </footer>
-
-    <!-- Script -->
-    <script src="js/script.js"></script>
+<!-- Custom scripts for home page -->
+<script>
+  function showTab(tabId) {
+    let tabs = document.querySelectorAll('.tab-pane');
+    let buttons = document.querySelectorAll('.tab-btn');
+    tabs.forEach(t => t.classList.remove('active'));
+    buttons.forEach(b => b.classList.remove('active'));
+    
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+</script>
 </body>
 </html>

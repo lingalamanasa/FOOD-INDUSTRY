@@ -1,202 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Stackly Foods - Reservations & Inquiries</title>
-    <meta name="description" content="Get in touch with Stackly Foods. Contact us for table reservations, catering quotes, private chef bookings, and coordinates.">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Contact || Stackly AgSec</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <header>
-        <nav class="navbar" id="mainNavbar">
-            <a href="index.html" class="logo" id="logoLink">
-                <div class="logo-icon">
-                    <i class="fas fa-bowl-food"></i>
-                </div>
-                <div class="logo-text">
-                    <h2>STACKLY</h2>
-                    <span>FOODS</span>
-                </div>
-            </a>
+<!-- 1. Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+      <img src="images/logo.webp" alt="Stackly AgSec Logo" class="logo-img">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-shield-check"></i> About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html"><i class="bi bi-shield-check"></i> Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html"><i class="bi bi-journal-text"></i> Blog</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+        <li class="nav-item dropdown ms-lg-3">
+          <a class="nav-link dropdown-toggle profile-icon" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-person-circle fs-4"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
+            <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-in-right"></i> Login</a></li>
+            <li><a class="dropdown-item" href="register.html"><i class="bi bi-person-plus"></i> Register</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" id="navHome">Home</a></li>
-                <li><a href="about.html" id="navAbout">About Us</a></li>
-                <li><a href="services.html" id="navServices">Services</a></li>
-                <li><a href="blog.html" id="navBlog">Blog</a></li>
-                <li><a href="contact.html" class="active" id="navContact">Contact</a></li>
-                <li><a href="login.html" id="navLogin">Login</a></li>
-                <li><a href="register.html" class="btn-nav" id="navRegister">Get Started</a></li>
-            </ul>
+<!-- 2. Page Hero Section -->
+<section class="page-hero">
+  <div class="container">
+    <h1 class="section-title">Get in <span>Touch</span></h1>
+    <p>We are ready to secure your operations. Schedule a biological scan, request silo audits, or coordinate cold-chain reviews.</p>
+  </div>
+</section>
 
-            <div class="menu-btn" id="menuBtn">
-                <i class="fas fa-bars"></i>
+<!-- 3. Contact Form & Info Grid Section -->
+<section class="contact-section pt-0 pb-5">
+  <div class="container">
+    <div class="row">
+      <!-- Contact Info -->
+      <div class="col-lg-5 mb-5 mb-lg-0">
+        <div class="custom-card p-5 h-100 bg-dark">
+          <h3 class="mb-4">Contact Information</h3>
+          <p class="text-muted mb-5">Fill out the diagnostic request form and our regional agronomist will contact you within 24 hours.</p>
+          
+          <div class="d-flex align-items-start mb-4">
+            <i class="bi bi-telephone text-warning fs-3 me-3"></i>
+            <div>
+              <h5>Call Advisor</h5>
+              <p class="text-muted">+1 (555) 123-4567</p>
             </div>
-        </nav>
-    </header>
-
-    <!-- SECTION 1: PAGE HERO -->
-    <section class="page-hero animate-on-scroll" id="contact-hero">
-        <div class="container">
-            <h1>Contact <span class="highlight">Us</span></h1>
-            <div class="breadcrumb">
-                <a href="index.html" id="breadcrumbHome">Home</a>
-                <span>&gt;</span>
-                <span>Contact Us</span>
+          </div>
+          
+          <div class="d-flex align-items-start mb-4">
+            <i class="bi bi-envelope text-warning fs-3 me-3"></i>
+            <div>
+              <h5>Email Inspector</h5>
+              <p class="text-muted">audit@stacklyagsec.com</p>
             </div>
+          </div>
+          
+          <div class="d-flex align-items-start">
+            <i class="bi bi-geo-alt text-warning fs-3 me-3"></i>
+            <div>
+              <h5>Headquarters</h5>
+              <p class="text-muted">102 Agricultural District, Suite 500<br>Central Hub, NY 10001</p>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- SECTION 2: CONTACT INFO CARDS -->
-    <section class="contact-info-section animate-on-scroll" id="contact-cards">
-        <div class="container">
-            <div class="contact-cards">
-                <!-- Card 1 -->
-                <div class="contact-card animate-scale delay-1">
-                    <div class="contact-icon">
-                        <i class="fas fa-location-dot"></i>
-                    </div>
-                    <h3>Our Address</h3>
-                    <p>102 Culinary Plaza, Suite 500<br>Gastronomy District, NY 10001</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="contact-card animate-scale delay-2">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <h3>Phone Number</h3>
-                    <p><a href="tel:+15551234567" id="contactPhoneLink">+1 (555) 123-4567</a><br>Mon-Sun: 10:00 AM - 11:00 PM</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="contact-card animate-scale delay-3">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email Address</h3>
-                    <p><a href="mailto:info@stacklyfoods.com" id="contactEmailLink">info@stacklyfoods.com</a><br><a href="mailto:events@stacklyfoods.com" id="contactEventsEmailLink">events@stacklyfoods.com</a></p>
-                </div>
+      </div>
+      
+      <!-- Contact Form -->
+      <div class="col-lg-7">
+        <div class="custom-card p-5 h-100">
+          <h3 class="mb-4">Request Farm Audit / Diagnostic</h3>
+          <form id="contactForm">
+            <div class="row">
+              <div class="col-md-6 mb-3 form-group">
+                <label class="form-label" for="contact-name">Full Name *</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="John Doe" required>
+                <div class="error-message text-danger small mt-1" style="display:none;"></div>
+              </div>
+              <div class="col-md-6 mb-3 form-group">
+                <label class="form-label" for="contact-phone">Phone Number</label>
+                <input type="text" id="contact-phone" class="form-control" placeholder="+1 (555) 123-4567">
+                <div class="error-message text-danger small mt-1" style="display:none;"></div>
+              </div>
             </div>
+            <div class="mb-3 form-group">
+              <label class="form-label" for="contact-email">Email Address *</label>
+              <input type="email" id="contact-email" class="form-control" placeholder="john@example.com" required>
+              <div class="error-message text-danger small mt-1" style="display:none;"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3 form-group">
+                <label class="form-label" for="contact-subject">Operation Location / City *</label>
+                <input type="text" id="contact-subject" class="form-control" placeholder="e.g. Salinas Valley, CA" required>
+                <div class="error-message text-danger small mt-1" style="display:none;"></div>
+              </div>
+              <div class="col-md-6 mb-3 form-group">
+                <label class="form-label" for="contact-size">Estimated Farm/Silo Scale</label>
+                <select id="contact-size" class="form-control" style="background-color: rgba(30, 41, 59, 0.6); color: var(--text-light); border: 1px solid var(--glass-border);">
+                  <option value="small">Smallholder (< 50 Acres)</option>
+                  <option value="medium">Cooperative (50 - 500 Acres)</option>
+                  <option value="large">Industrial Hub (> 500 Acres)</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-4 form-group">
+              <label class="form-label" for="contact-message">Specific Diagnostic Requirements *</label>
+              <textarea id="contact-message" class="form-control" rows="4" placeholder="Describe soil symptoms, moisture levels, or crop issues..." required></textarea>
+              <div class="error-message text-danger small mt-1" style="display:none;"></div>
+            </div>
+            <button type="submit" class="btn btn-cyber w-100">Send Audit Request</button>
+          </form>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- SECTION 3: CONTACT FORM -->
-    <section class="contact-form-section animate-on-scroll" id="contact-form-area">
-        <div class="container contact-form-container">
-            <div class="section-header">
-                <h2>Send Us a <span class="highlight">Message</span></h2>
-                <p>Have questions about bookings, private caterings, or classes? Drop us a line and we'll reply within 24 hours.</p>
-            </div>
-            <form class="contact-form" id="contactForm" novalidate>
-                <div class="form-group">
-                    <label for="contact-name">Full Name *</label>
-                    <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
-                    <span class="error-message"></span>
-                </div>
-                <div class="form-group">
-                    <label for="contact-email">Email Address *</label>
-                    <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
-                    <span class="error-message"></span>
-                </div>
-                <div class="form-group">
-                    <label for="contact-phone">Phone Number</label>
-                    <input type="tel" id="contact-phone" name="phone" placeholder="+1 (555) 000-0000">
-                    <span class="error-message"></span>
-                </div>
-                <div class="form-group">
-                    <label for="contact-subject">Subject *</label>
-                    <input type="text" id="contact-subject" name="subject" placeholder="Table reservation, Catering query..." required>
-                    <span class="error-message"></span>
-                </div>
-                <div class="form-group full-width">
-                    <label for="contact-message">Message *</label>
-                    <textarea id="contact-message" name="message" placeholder="Please write your detailed query here..." required></textarea>
-                    <span class="error-message"></span>
-                </div>
-                <div class="form-submit">
-                    <button type="submit" class="primary-btn" id="contactSubmitBtn">Submit Message</button>
-                </div>
-            </form>
+<!-- 4. FAQ Accordion Section [NEW SECTION] -->
+<section class="faq-section bg-dark border-top border-bottom border-secondary">
+  <div class="container" style="max-width: 800px;">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+      <p class="section-subtitle">Common questions regarding agricultural audits and IoT telemetry setups.</p>
+    </div>
+    
+    <div class="accordion" id="faqAccordion">
+      <!-- FAQ 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            How long does a crop diagnostics soil scan take?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Soil nutrition assays take 24-48 hours from sample arrival. DNA PCR screening takes up to 72 hours due to molecular profiling schedules.
+          </div>
         </div>
-    </section>
+      </div>
+      <!-- FAQ 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            What is the SiloShield biosecurity audit?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            SiloShield is our comprehensive storage audit. We inspect physical seals, evaluate automated ventilation fans, and verify thermal telemetry trackers to eliminate mold and moisture risks.
+          </div>
+        </div>
+      </div>
+      <!-- FAQ 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Do you support logistics tracing during shipping?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, our logistics program integrates active GPS temperature/humidity sensors and digital security seals to log route parameters securely from farm gate to grain terminal.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- SECTION 4: MAP EMBED -->
-    <section class="map-section" id="contact-map">
-        <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6175394200877!2d-73.98785312344795!3d40.748440471389284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Stackly Foods Location Map"></iframe>
-        </div>
-    </section>
+<!-- 5. Emergency Alert Reporting Section [NEW SECTION] -->
+<section class="emergency-section pt-5 pb-5">
+  <div class="container text-center">
+    <div class="p-5 rounded-4 bg-danger bg-opacity-10 border border-danger border-opacity-25" style="max-width: 800px; margin: 0 auto;">
+      <h3 class="text-danger mb-3"><i class="bi bi-exclamation-octagon-fill"></i> Emergency Biological Alert?</h3>
+      <p class="text-muted mb-4">Are you experiencing rapid crop decay, insect invasions, or silo temperature spikes? Contact our agronomist emergency squad immediately.</p>
+      <a href="tel:+15551234567" class="btn btn-danger px-4 py-2 fw-bold"><i class="bi bi-telephone-fill me-2"></i> Call Hot-line: +1 (555) 123-4567</a>
+    </div>
+  </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col footer-about">
-                <a href="index.html" class="logo" style="margin-bottom: 20px;" id="footerLogo">
-                    <div class="logo-icon">
-                        <i class="fas fa-bowl-food"></i>
-                    </div>
-                    <div class="logo-text">
-                        <h2>STACKLY</h2>
-                        <span>FOODS</span>
-                    </div>
-                </a>
-                <p>Bringing you the fine art of luxurious dining, organic ingredients, and curated sensory experiences designed to make every meal memorable.</p>
-                <div class="footer-social">
-                    <a href="https://facebook.com" target="_blank" id="facebookLink"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com" target="_blank" id="instagramLink"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com" target="_blank" id="twitterLink"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://youtube.com" target="_blank" id="youtubeLink"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footer-col footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html" id="footerLinkHome">Home</a></li>
-                    <li><a href="about.html" id="footerLinkAbout">About Us</a></li>
-                    <li><a href="services.html" id="footerLinkServices">Services</a></li>
-                    <li><a href="blog.html" id="footerLinkBlog">Blog & News</a></li>
-                    <li><a href="contact.html" id="footerLinkContact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col footer-contact">
-                <h3>Contact Info</h3>
-                <ul>
-                    <li>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>102 Culinary Plaza, Suite 500, Gastronomy District, NY 10001</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone-alt"></i>
-                        <span><a href="tel:+15551234567" id="footerPhone">+1 (555) 123-4567</a></span>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <span><a href="mailto:info@stacklyfoods.com" id="footerEmail">info@stacklyfoods.com</a></span>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-col footer-newsletter">
-                <h3>Newsletter</h3>
-                <p>Subscribe to receive cooking tips, special offers, and recipes.</p>
-                <form class="newsletter-form" id="footerNewsletterForm">
-                    <input type="email" placeholder="Your Email..." required id="footerNewsletterEmail">
-                    <button type="submit" id="footerNewsletterSubmitBtn"><i class="fas fa-paper-plane"></i></button>
-                </form>
-            </div>
+<!-- 6. Our Regional Labs Locations Section [NEW SECTION] -->
+<section class="labs-section bg-dark border-top border-bottom border-secondary">
+  <div class="container text-center">
+    <h2 class="section-title">Regional <span>Hub Labs</span></h2>
+    <p class="section-subtitle">Dispatch points and testing hubs for farm diagnostic audits.</p>
+    <div class="row g-4 mt-2">
+      <div class="col-lg-4 col-md-6">
+        <div class="custom-card p-4">
+          <h5>Salinas Diagnostic Hub</h5>
+          <p class="text-muted small mb-0">Servicing Western agriculture sectors. Soil labs, DNA assays.</p>
+          <p class="text-primary small mt-2">Call: +1 (555) 111-2222</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Stackly Foods. All rights reserved. Designed with passion by Antigravity. | <a href="#" id="privacyPolicyLink">Privacy Policy</a> | <a href="#" id="termsOfServiceLink">Terms of Service</a></p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="custom-card p-4">
+          <h5>Midwest Storage Lab</h5>
+          <p class="text-muted small mb-0">Servicing grain silo belt districts. Telemetry calibrations.</p>
+          <p class="text-primary small mt-2">Call: +1 (555) 333-4444</p>
         </div>
-    </footer>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="custom-card p-4">
+          <h5>Eastern Logistics Hub</h5>
+          <p class="text-muted small mb-0">Servicing shipping corridors and port cold chains.</p>
+          <p class="text-primary small mt-2">Call: +1 (555) 555-6666</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Script -->
-    <script src="js/script.js"></script>
+<!-- 7. Footer Section -->
+<footer class="footer-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h3 class="footer-logo d-flex align-items-center">
+          <img src="images/logo.webp" alt="Stackly AgSec Logo" class="footer-logo-img me-2">
+        </h3>
+        <p class="footer-text">
+          Advanced biological defense and logistics solutions safeguarding crop health, grain reserves, and global distribution nodes.
+        </p>
+        <div class="social-icons">
+          <a href="error.html"><i class="bi bi-facebook"></i></a>
+          <a href="error.html"><i class="bi bi-twitter-x"></i></a>
+          <a href="error.html"><i class="bi bi-linkedin"></i></a>
+          <a href="error.html"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="error.html">Careers</a></li>
+          <li><a href="blog.html">Blog & News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Crops Analysis</a></li>
+          <li><a href="services.html">Silo Protection</a></li>
+          <li><a href="services.html">Biosecurity Audits</a></li>
+          <li><a href="services.html">Cold-Chain Logistics</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="error.html">Help Center</a></li>
+          <li><a href="error.html">Privacy Policy</a></li>
+          <li><a href="error.html">Terms & Conditions</a></li>
+          <li><a href="error.html">System Status</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      <p>&copy; 2026 Stackly AgSec. All rights reserved. Designed with passion by Antigravity.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script -->
+<script src="js/script.js"></script>
 </body>
 </html>

@@ -1,92 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Stackly Foods - Access Your Account</title>
-    <meta name="description" content="Log in to your Stackly Foods account to manage bookings, orders, and recipes.">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Login || Stackly AgSec</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
-<body class="auth-page">
+<body>
 
-    <div class="auth-card">
-        <div class="auth-header">
-            <a href="index.html" class="logo auth-logo" id="authLogo">
-                <div class="logo-icon">
-                    <i class="fas fa-bowl-food"></i>
-                </div>
-                <div class="logo-text">
-                    <h2>STACKLY</h2>
-                    <span>FOODS</span>
-                </div>
-            </a>
-            <h2>Welcome Back</h2>
-            <p>Please log in to manage your dining reservations</p>
-        </div>
-
-        <form class="auth-form" id="loginForm" novalidate>
-            <div class="form-group">
-                <label for="login-email">Email Address *</label>
-                <input type="email" id="login-email" placeholder="name@example.com" required autocomplete="email">
-                <span class="error-message"></span>
-            </div>
-
-            <div class="form-group">
-                <label for="login-password">Password *</label>
-                <input type="password" id="login-password" placeholder="••••••••" required autocomplete="current-password">
-                <button type="button" class="toggle-password" aria-label="Toggle password visibility">
-                    <i class="far fa-eye"></i>
-                </button>
-                <span class="error-message"></span>
-            </div>
-
-            <div class="form-group">
-                <label for="login-role">Select Role *</label>
-                <select id="login-role" required>
-                    <option value="" disabled selected>-- Choose Your Role --</option>
-                    <option value="customer">Customer</option>
-                    <option value="chef">Chef</option>
-                    <option value="admin">Administrator</option>
-                </select>
-                <span class="error-message"></span>
-            </div>
-
-            <div class="form-options">
-                <label>
-                    <input type="checkbox" id="remember-me"> Remember Me
-                </label>
-                <a href="#" id="forgotPasswordLink">Forgot Password?</a>
-            </div>
-
-            <button type="submit" class="primary-btn auth-btn" id="loginSubmitBtn">Log In</button>
-        </form>
-
-        <div class="auth-divider">
-            <span>OR</span>
-        </div>
-
-        <button type="button" class="google-btn" id="googleLoginBtn">
-            <!-- Simple SVG for Google G Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20px" height="20px">
-                <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
-                <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
-                <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.422-5.189l-6.161-5.207C29.352,35.191,26.793,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
-                <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
-            </svg>
-            Continue with Google
-        </button>
-
-        <div class="auth-footer">
-            <p>Don't have an account? <a href="register.html" id="goToRegisterLink">Sign Up</a></p>
-        </div>
+<!-- 1. Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+      <img src="images/logo.webp" alt="Stackly AgSec Logo" class="logo-img">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-shield-check"></i> About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html"><i class="bi bi-shield-check"></i> Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html"><i class="bi bi-journal-text"></i> Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+        <li class="nav-item dropdown ms-lg-3">
+          <a class="nav-link dropdown-toggle profile-icon active" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-person-circle fs-4"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
+            <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-in-right"></i> Login</a></li>
+            <li><a class="dropdown-item" href="register.html"><i class="bi bi-person-plus"></i> Register</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
+  </div>
+</nav>
 
-    <!-- Script -->
-    <script src="js/script.js"></script>
+<!-- 2. Page Hero Section -->
+<section class="page-hero pb-0">
+  <div class="container">
+    <h1 class="section-title">Welcome <span>Back</span></h1>
+    <p>Login to your security console to manage crop diagnostics, silo stats, and route logs.</p>
+  </div>
+</section>
+
+<!-- 3. Auth Form Section -->
+<section class="auth-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-8">
+        <div class="custom-card p-5">
+          <h3 class="mb-4 text-center">Login to Console</h3>
+          <form id="loginForm">
+            <div class="mb-3 form-group">
+              <label class="form-label" for="login-email">Email Address *</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input type="email" id="login-email" class="form-control" placeholder="name@example.com" required>
+              </div>
+              <div class="error-message text-danger small mt-1" style="display:none;"></div>
+            </div>
+            <div class="mb-3 form-group">
+              <label class="form-label" for="login-password">Password *</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+              </div>
+              <div class="error-message text-danger small mt-1" style="display:none;"></div>
+            </div>
+            <div class="mb-4 form-group">
+              <label class="form-label" for="login-role">Select Security Role *</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
+                <select id="login-role" class="form-control" style="background-color: rgba(30, 41, 59, 0.6); color: var(--text-light); border: 1px solid var(--glass-border);" required>
+                  <option value="" disabled selected>Choose role...</option>
+                  <option value="customer">Farmer / Partner Portal</option>
+                  <option value="chef">Agricultural Specialist</option>
+                  <option value="admin">System & Logistics Admin</option>
+                </select>
+              </div>
+              <div class="error-message text-danger small mt-1" style="display:none;"></div>
+            </div>
+            <div class="d-flex justify-content-between mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rememberMe">
+                <label class="form-check-label text-muted" for="rememberMe">Remember me</label>
+              </div>
+              <a href="#" class="text-warning text-decoration-none">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn btn-cyber w-100 mb-4">Sign In</button>
+            <p class="text-center text-muted mb-0">Don't have an account? <a href="register.html" class="text-warning text-decoration-none fw-bold">Register here</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Footer Section -->
+<footer class="footer-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h3 class="footer-logo d-flex align-items-center">
+          <img src="images/logo.webp" alt="Stackly AgSec Logo" class="footer-logo-img me-2">
+        </h3>
+        <p class="footer-text">
+          Advanced biological defense and logistics solutions safeguarding crop health, grain reserves, and global distribution nodes.
+        </p>
+        <div class="social-icons">
+          <a href="error.html"><i class="bi bi-facebook"></i></a>
+          <a href="error.html"><i class="bi bi-twitter-x"></i></a>
+          <a href="error.html"><i class="bi bi-linkedin"></i></a>
+          <a href="error.html"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="error.html">Careers</a></li>
+          <li><a href="blog.html">Blog & News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Crops Analysis</a></li>
+          <li><a href="services.html">Silo Protection</a></li>
+          <li><a href="services.html">Biosecurity Audits</a></li>
+          <li><a href="services.html">Cold-Chain Logistics</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="error.html">Help Center</a></li>
+          <li><a href="error.html">Privacy Policy</a></li>
+          <li><a href="error.html">Terms & Conditions</a></li>
+          <li><a href="error.html">System Status</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      <p>&copy; 2026 Stackly AgSec. All rights reserved. Designed with passion by Antigravity.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script -->
+<script src="js/script.js"></script>
 </body>
 </html>
