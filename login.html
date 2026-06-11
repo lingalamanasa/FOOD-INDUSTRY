@@ -57,6 +57,11 @@
         <div class="custom-card p-5">
           <h3 class="mb-4 text-center">Login to Console</h3>
           <form id="loginForm">
+            <!-- Hidden inputs for CSS role routing -->
+            <input type="radio" name="role" id="role-customer" class="role-radio" checked>
+            <input type="radio" name="role" id="role-chef" class="role-radio">
+            <input type="radio" name="role" id="role-admin" class="role-radio">
+
             <div class="mb-3 form-group">
               <label class="form-label" for="login-email">Email Address *</label>
               <div class="input-group">
@@ -74,17 +79,12 @@
               <div class="error-message text-danger small mt-1" style="display:none;"></div>
             </div>
             <div class="mb-4 form-group">
-              <label class="form-label" for="login-role">Select Security Role *</label>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
-                <select id="login-role" class="form-control" style="background-color: rgba(30, 41, 59, 0.6); color: var(--text-light); border: 1px solid var(--glass-border);" required>
-                  <option value="" disabled selected>Choose role...</option>
-                  <option value="customer">Farmer / Partner Portal</option>
-                  <option value="chef">Agricultural Specialist</option>
-                  <option value="admin">System & Logistics Admin</option>
-                </select>
+              <label class="form-label">Select Security Role *</label>
+              <div class="role-selector-container">
+                <label for="role-customer" class="role-label-btn">Farmer / Partner Portal</label>
+                <label for="role-chef" class="role-label-btn">Agricultural Specialist</label>
+                <label for="role-admin" class="role-label-btn">System & Logistics Admin</label>
               </div>
-              <div class="error-message text-danger small mt-1" style="display:none;"></div>
             </div>
             <div class="d-flex justify-content-between mb-4">
               <div class="form-check">
@@ -93,7 +93,10 @@
               </div>
               <a href="#" class="text-warning text-decoration-none">Forgot Password?</a>
             </div>
-            <button type="submit" class="btn btn-cyber w-100 mb-4">Sign In</button>
+            <!-- Dynamic Sign In Links replacing the submit button -->
+            <a href="customer-dashboard.html" class="btn btn-cyber w-100 mb-4 signin-link signin-customer">Sign In as Farmer</a>
+            <a href="chef-dashboard.html" class="btn btn-cyber w-100 mb-4 signin-link signin-chef">Sign In as Specialist</a>
+            <a href="admin-dashboard.html" class="btn btn-cyber w-100 mb-4 signin-link signin-admin">Sign In as Admin</a>
             <p class="text-center text-muted mb-0">Don't have an account? <a href="register.html" class="text-warning text-decoration-none fw-bold">Register here</a></p>
           </form>
         </div>
