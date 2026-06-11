@@ -88,21 +88,21 @@
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="stat-card text-center">
           <i class="bi bi-shield-check stat-icon"></i>
-          <h3 class="counter stat-number" data-target="4500" data-suffix="+">0</h3>
+          <h3 class="stat-number">4500+</h3>
           <p>Farms Monitored</p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="stat-card text-center">
           <i class="bi bi-globe stat-icon"></i>
-          <h3 class="counter stat-number" data-target="80" data-suffix="+">0</h3>
+          <h3 class="stat-number">80+</h3>
           <p>Regions Secured</p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="stat-card text-center">
           <i class="bi bi-award stat-icon"></i>
-          <h3 class="counter stat-number" data-target="95" data-suffix="%">0</h3>
+          <h3 class="stat-number">95%</h3>
           <p>Security Index</p>
         </div>
       </div>
@@ -114,58 +114,65 @@
 <section class="choose-section">
   <div class="container">
     <h2 class="text-center section-title">Why choose <span>Stackly AgSec</span>?</h2>
-    <div class="tabs text-center mt-4">
-      <button class="tab-btn active" onclick="showTab('protection')">Crop Protection</button>
-      <button class="tab-btn" onclick="showTab('performance')">Yield Performance</button>
-      <button class="tab-btn" onclick="showTab('easy')">Easy Diagnostics</button>
-    </div>
-    <div class="tab-content mt-5">
-      <!-- Tab 1 -->
-      <div class="tab-pane active" id="protection">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h3>Complete Bio-Defense</h3>
-            <p>Stackly AgSec uses advanced IoT and machine learning algorithms to detect soil pathogens and pest intrusions before they impact harvest yield.</p>
-            <ul>
-              <li><i class="bi bi-check-circle-fill"></i> Continuous crop health surveillance</li>
-              <li><i class="bi bi-check-circle-fill"></i> Automatic disease alert triggers</li>
-              <li><i class="bi bi-check-circle-fill"></i> Secure supply chain records</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 text-center">
-            <img src="images/hero1.webp" class="img-fluid tab-img" alt="Bio Defense">
+    <div class="tabs-container">
+      <input type="radio" name="tabs" id="tab-protection" checked>
+      <input type="radio" name="tabs" id="tab-performance">
+      <input type="radio" name="tabs" id="tab-easy">
+
+      <div class="tabs text-center mt-4">
+        <label for="tab-protection" class="tab-btn">Crop Protection</label>
+        <label for="tab-performance" class="tab-btn">Yield Performance</label>
+        <label for="tab-easy" class="tab-btn">Easy Diagnostics</label>
+      </div>
+
+      <div class="tab-content mt-5">
+        <!-- Tab 1 -->
+        <div class="tab-pane" id="content-protection">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <h3>Complete Bio-Defense</h3>
+              <p>Stackly AgSec uses advanced IoT and machine learning algorithms to detect soil pathogens and pest intrusions before they impact harvest yield.</p>
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i> Continuous crop health surveillance</li>
+                <li><i class="bi bi-check-circle-fill"></i> Automatic disease alert triggers</li>
+                <li><i class="bi bi-check-circle-fill"></i> Secure supply chain records</li>
+              </ul>
+            </div>
+            <div class="col-lg-6 text-center">
+              <img src="images/hero1.webp" class="img-fluid tab-img" alt="Bio Defense">
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Tab 2 -->
-      <div class="tab-pane" id="performance">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h3>Optimizing Soil & Output</h3>
-            <p>Lightweight remote monitoring sensors running on solar power continuously track moisture, nutrients, and temperature conditions to guide irrigation cycles.</p>
-            <ul>
-              <li><i class="bi bi-check-circle-fill"></i> Automated soil data gathering</li>
-              <li><i class="bi bi-check-circle-fill"></i> Weekly yield predictions</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 text-center">
-            <img src="images/hero2.webp" class="img-fluid tab-img" alt="Soil Optimization">
+        <!-- Tab 2 -->
+        <div class="tab-pane" id="content-performance">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <h3>Optimizing Soil & Output</h3>
+              <p>Lightweight remote monitoring sensors running on solar power continuously track moisture, nutrients, and temperature conditions to guide irrigation cycles.</p>
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i> Automated soil data gathering</li>
+                <li><i class="bi bi-check-circle-fill"></i> Weekly yield predictions</li>
+              </ul>
+            </div>
+            <div class="col-lg-6 text-center">
+              <img src="images/hero2.webp" class="img-fluid tab-img" alt="Soil Optimization">
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Tab 3 -->
-      <div class="tab-pane" id="easy">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h3>Simple Partner Console</h3>
-            <p>Get complete insight into crop indices, soil history, and order logs through an intuitive desktop and mobile interface designed for farmers.</p>
-            <ul>
-              <li><i class="bi bi-check-circle-fill"></i> Customizable threat alerts</li>
-              <li><i class="bi bi-check-circle-fill"></i> Direct agricultural advisor chat</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 text-center">
-            <img src="images/hero3.webp" class="img-fluid tab-img" alt="Partner Console">
+        <!-- Tab 3 -->
+        <div class="tab-pane" id="content-easy">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <h3>Simple Partner Console</h3>
+              <p>Get complete insight into crop indices, soil history, and order logs through an intuitive desktop and mobile interface designed for farmers.</p>
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i> Customizable threat alerts</li>
+                <li><i class="bi bi-check-circle-fill"></i> Direct agricultural advisor chat</li>
+              </ul>
+            </div>
+            <div class="col-lg-6 text-center">
+              <img src="images/hero3.webp" class="img-fluid tab-img" alt="Partner Console">
+            </div>
           </div>
         </div>
       </div>
@@ -329,7 +336,7 @@
           <i class="bi bi-shield-check icon"></i>
           <h5>Agri-Shield Optimum</h5>
           <p>Adaptive soil diagnostics and pest prevention package for growing seasons.</p>
-          <a href="services.html" class="solution-btn">Learn More</a>
+          <a href="error.html" class="solution-btn">Learn More</a>
         </div>
       </div>
       <!-- Solution 2 -->
@@ -338,7 +345,7 @@
           <i class="bi bi-globe icon"></i>
           <h5>IoT Crops Gateway</h5>
           <p>Solar-powered sensor grids mapping farm microclimates continuously.</p>
-          <a href="services.html" class="solution-btn">Learn More</a>
+          <a href="error.html" class="solution-btn">Learn More</a>
         </div>
       </div>
       <!-- Solution 3 -->
@@ -347,7 +354,7 @@
           <i class="bi bi-envelope icon"></i>
           <h5>Harvest Alert System</h5>
           <p>Direct notification channels warning farmers of weather anomalies.</p>
-          <a href="services.html" class="solution-btn">Learn More</a>
+          <a href="error.html" class="solution-btn">Learn More</a>
         </div>
       </div>
       <!-- Solution 4 -->
@@ -356,7 +363,7 @@
           <i class="bi bi-microsoft icon"></i>
           <h5>Inspector Platform</h5>
           <p>Coordinated management tools for cooperative field audits.</p>
-          <a href="services.html" class="solution-btn">Learn More</a>
+          <a href="error.html" class="solution-btn">Learn More</a>
         </div>
       </div>
     </div>
@@ -419,19 +426,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Script -->
-<script src="js/script.js"></script>
 
-<!-- Custom scripts for home page -->
-<script>
-  function showTab(tabId) {
-    let tabs = document.querySelectorAll('.tab-pane');
-    let buttons = document.querySelectorAll('.tab-btn');
-    tabs.forEach(t => t.classList.remove('active'));
-    buttons.forEach(b => b.classList.remove('active'));
-    
-    document.getElementById(tabId).classList.add('active');
-    event.currentTarget.classList.add('active');
-  }
-</script>
+
+
 </body>
 </html>

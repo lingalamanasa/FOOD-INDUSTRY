@@ -355,8 +355,20 @@ section {
   cursor: pointer;
 }
 
-.tab-btn.active,
 .tab-btn:hover {
+  background: var(--primary-color);
+  color: var(--bg-dark);
+  box-shadow: 0 4px 15px rgba(34, 211, 238, 0.4);
+  border-color: var(--primary-color);
+}
+
+input[name="tabs"] {
+  display: none;
+}
+
+#tab-protection:checked ~ .tabs label[for="tab-protection"],
+#tab-performance:checked ~ .tabs label[for="tab-performance"],
+#tab-easy:checked ~ .tabs label[for="tab-easy"] {
   background: var(--primary-color);
   color: var(--bg-dark);
   box-shadow: 0 4px 15px rgba(34, 211, 238, 0.4);
@@ -368,7 +380,9 @@ section {
   animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.tab-pane.active {
+#tab-protection:checked ~ .tab-content #content-protection,
+#tab-performance:checked ~ .tab-content #content-performance,
+#tab-easy:checked ~ .tab-content #content-easy {
   display: block;
 }
 
